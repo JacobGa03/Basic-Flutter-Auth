@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "85539749575",
+    "project_id": "practice-auth-26b7c",
+    "storage_bucket": "practice-auth-26b7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85539749575:android:d2937a644fa86b1a2608e2",
+        "android_client_info": {
+          "package_name": "com.authprac.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMe_bFTr7jGUAZh-4YR5iAYXfD5FkTfZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
