@@ -16,7 +16,16 @@ class _RegisterPageState extends State<RegisterPage> {
   final passwordController = TextEditingController();
   final confPasswordController = TextEditingController();
 
-  // TODO: Function that adds new users to the firebase auth site
+  void showMessage(String message) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(message),
+          );
+        });
+  }
+
   void registerUser() async {
     // Show a little loading icon
     showDialog(
@@ -30,14 +39,14 @@ class _RegisterPageState extends State<RegisterPage> {
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
+
+      // Pop the loading screen
       Navigator.pop(context);
+      // Display success message
+      showMessage("Successfully Created Account!");
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
-      if (e.code == 'email-already-in-use') {
-        print('email already being used');
-      } else {
-        print('something else went wrong');
-      }
+      showMessage(e.code);
     }
   }
 
